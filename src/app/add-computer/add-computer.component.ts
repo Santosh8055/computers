@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DataService } from './../services/data.service';
 
 @Component({
 	selector: 'add-computer',
@@ -15,11 +16,21 @@ export class AddComputerComponent implements OnInit {
 		location: ""
 	};
 
-	private submitComputer(){
-		console.log(this.computerDetails);
+	private submitComputer() {
+		var details = JSON.stringify(this.computerDetails);
+		if (this.computerDetails.name !== '' &&
+			this.computerDetails.ip !== '' &&
+			this.computerDetails.mac !== '' &&
+			this.computerDetails.location !== '') {
+			this.dataService.addComputers(details).subscribe((result) => {
+				console.log(result);
+			});
+		} else {
+			alert('fill all details');
+		}
 	}
 
-	constructor() { }
+	constructor(private dataService: DataService) { }
 
 	ngOnInit() {
 	}

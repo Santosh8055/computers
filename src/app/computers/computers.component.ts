@@ -13,7 +13,7 @@ export class ComputersComponent implements OnInit {
 	ngOnInit() {
 		this.dataService.getComputers().subscribe((result) => {
 			this.computers = result;
-		})
+		});
 	}
 
 }
