@@ -1,0 +1,14 @@
+<div class="progress-card-container container">
+	<div class="add-computer">
+		<button type="button" class="btn btn-primary" routerLink="/add">Add computer</button>
+	</div>
+	<div class="row">
+		<div class="col-sm-6 col-md-6 col-lg-4" *ngFor="let computer of computers">
+			<computer [details]="computer"></computer>
+		</div>
+
+		<div class="row" *ngIf="computers.length < 1">
+			At the moment there are no computers
+		</div>
+	</div>
+</div>

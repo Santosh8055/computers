@@ -1,0 +1,14 @@
+<div class="computer mt-1 mb-5">
+	<div class="card shadow-sm bg-white">
+		<div class="card-body">
+			<table class="table table-striped">
+				<tbody>
+					<tr *ngFor="let k of objectKeys(details)">
+						<td class="capitalize">{{k}}:</td>
+						<td>{{details[k]}}</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>
