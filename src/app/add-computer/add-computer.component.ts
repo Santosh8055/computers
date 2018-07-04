@@ -24,6 +24,14 @@ export class AddComputerComponent implements OnInit {
 			this.computerDetails.location !== '') {
 			this.dataService.addComputers(details).subscribe((result) => {
 				console.log(result);
+				alert('computer added');
+				this.computerDetails = {
+					name: "",
+					ip: "",
+					mac: "",
+					onCreate: "",
+					location: ""
+				}
 			});
 		} else {
 			alert('fill all details');
