@@ -8,7 +8,7 @@ import { DataService } from './../services/data.service';
 })
 export class AddComputerComponent implements OnInit {
 
-	private computerDetails = {
+	public computerDetails = {
 		name: "",
 		ip: "",
 		mac: "",
@@ -16,7 +16,7 @@ export class AddComputerComponent implements OnInit {
 		location: ""
 	};
 
-	private submitComputer() {
+	public submitComputer() {
 		var details = JSON.stringify(this.computerDetails);
 		if (this.computerDetails.name !== '' &&
 			this.computerDetails.ip !== '' &&
